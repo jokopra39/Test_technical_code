@@ -32,7 +32,16 @@
         for(let i = 0; i < nInp.length; i++){
             let n = 10 * 10
             pengali = n * (pengali/10)
+            console.log("jj",nInp[i])
             let res = nInp[i] * pengali
+           
+            if(nInp[i] === "0"){
+                let newRes = 1 * pengali;
+                let nr = newRes.toString()
+                nr = nr.split('');
+                nr[0] = '0';
+                res = nr.join('');
+            }
             $("#result").append(`<div>${res}</div>`)   
         }
        }
