@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <div>
+        <div style="margin-bottom: 12px;"><input type="text" id="inputNumber" placeholder="Input Angka"></div>
+        <div>
+            <button id="genSegitiga">Generate segitiga</button>
+            <button id="genBilanganGenap">Generate Bilangan Ganjil</button>
+            <button id="genBilanganPrima">Generate Bilangan Prima</button>
+        </div>
+       
+        <div>
+            <h2>Result :</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script>
+       
+       function getInput(){
+        var input = $("#inputNumber").val();
+        return input;
+       }
+       //
+       function genSegitiga(){
+        $("#result").html("")
+        let nInp = getInput().split("")
+        let pengali = 1
+        for(let i = 0; i < nInp.length; i++){
+            let n = 10 * 10
+            pengali = n * (pengali/10)
+            let res = nInp[i] * pengali
+            $("#result").append(`<div>${res}</div>`)   
+        }
+       }
+
+
+
+       function genBilanganGenap(){
+        console.log(getInput());
+       }
+       function genBilanganPrima(){
+        console.log(getInput());
+       }
+       $("#genSegitiga").click(function(){
+        genSegitiga();
+       });
+       $("#genBilanganGenap").click(function(){
+        genBilanganGenap()
+       });
+       $("#genBilanganPrima").click(function(){
+        //2,3,5,7,11
+        genBilanganPrima()
+       });
+    </script>
+</body>
+
+</html>
